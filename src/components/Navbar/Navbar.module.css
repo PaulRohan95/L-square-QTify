@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
 nav {
   background-color: var(--css-primary);
   width: 100%;
@@ -10,6 +12,8 @@ nav {
 }
 
 #nav-btn {
+  font-family: 'Poppins';
+  text-align: center;
   background: #121212;
   color: var(--css-primary);
   font-size: 18px;

@@ -1,9 +1,10 @@
-import Logoicon from "./Logoicon";
+// import Logoicon from "./Logoicon";
+import qtify_logo from "../../assets/qtify_logo.png";
 
 function Logo () {
     return (
       <div>
-        <Logoicon />
+        <img src={qtify_logo} alt="qtify_logo" />
       </div>
     );
   };
