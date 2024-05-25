@@ -1,39 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-.gridContainer {
-	display: flex;
-	width: Hug (1384px)px;
-	height: Hug (592px)px;
-	top: 32px;
-	left: 31px;
-	position: relative;	
-  }
-  
-  .gridTop h1 {
-	position: relative;
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-	width: 122px;
-	height: 30px;
-	font-family: 'Poppins';
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 30px;
-	color: var(--css-white);
-  }
-
-  .albumCards {
-	display: flex;
-	flex-wrap: wrap;
-	position: absolute;
-	gap: 20px;
-	width: 100%;
-	height: 232px;
-	top: 48px;
-	left: 12px;
-	gap: 40px;	
-  }
   
   .cardFrame {
 	width: 159px;
@@ -76,13 +42,12 @@
   }
 
 
-  .chips {
+  .chipDesign {
     display: inline-flex;
     flex-direction: row;
     position: absolute;
 	align-items: center;
 	justify-content: start;
-    /* width: 100px; */
     height: 23px;
     top: 176px;
     left: 8px;
