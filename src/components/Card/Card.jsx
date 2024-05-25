@@ -26,7 +26,7 @@ const Card = () => {
                 <div className={styles.rect1}>
                     <img src={album.image} alt={album.title} className={styles.cardImage} />
                     {/* <div className={styles.pill}>{album.follows} Follows</div> */}
-                    <Chip label={`${album.follows} Follows`} className={styles.chip} />
+                    <Chip label={`${album.follows} Follows`} className={styles.chipDesign} />
                 </div>
                 <div className={styles.cardContent}>
                     <p>{album.title}</p>

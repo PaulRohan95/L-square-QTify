@@ -6,7 +6,6 @@
 	height: Hug (592px)px;
 	top: 32px;
 	left: 31px;
-	/* gap: 32px; */
 	position: relative;	
   }
   
@@ -40,7 +39,6 @@
 	width: 159px;
 	height: 232px;
 	gap: 6px;
-	opacity: 0px;	
   }
 
   
@@ -52,7 +50,8 @@
 	width: 159px;
 	height: 205px;
 	border-radius: 10px ;
-	background-color: var(--css-white)	;
+	background-color: var(--css-white);
+	position: relative;
   }
 
   .cardImage {
@@ -62,11 +61,7 @@
   }
   
   .cardContent {
-	padding: 15px;
 	text-align: left;
-  }
-  
-  .cardContent {
 	display: block;
 	align-items: start;
 	width: 130px;
@@ -80,34 +75,15 @@
   }
 
 
-  .chip {
-	align-items: center;
-	background-color: white;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	display: flex;
-	padding-left: .5rem;
-	width: Hug (71px)px;
-	height: 15%;
-	top: 176px;
-	left: 8px;
-	gap: 1px;
-	border-radius: 10px;
-	background-color: black;
-	color: var(--css-white);
-	font-size: 10px;
-	line-height: 15px;
-	font-weight: 400;
-  }
-
-  /* .chip {
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	background-color: var(--css-black);
-	color: var(--css-white);
-	font-size: 10px;
-	line-height: 15px;
-	font-weight: 400;
-} */
-  
+  .chipDesign {
+    position: absolute;
+    width: Hug (71px)px;
+    height: Hug (23px)px;
+    top: 176px;
+    left: 8px;
+    padding: 4px 8px;
+    gap: 1px;
+    border-radius: 10px 0px 0px 0px;
+    background: var(--css-black);    
+    color: var(--css-white);
+}
