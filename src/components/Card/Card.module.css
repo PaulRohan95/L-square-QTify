@@ -39,6 +39,7 @@
 	width: 159px;
 	height: 232px;
 	gap: 6px;
+	position: relative;
   }
 
   
@@ -46,7 +47,7 @@
 	transform: scale(1.05);
   }
 
-  .rect1 {
+  .rect {
 	width: 159px;
 	height: 205px;
 	border-radius: 10px ;
@@ -64,26 +65,31 @@
 	text-align: left;
 	display: block;
 	align-items: start;
-	width: 130px;
+	width: auto;
 	height: 21px;
 	font-family: 'Poppins';
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 21px;
 	color: var(--css-white);
-	padding: .25rem 0;
+	padding: .5rem 0;
   }
 
 
-  .chipDesign {
+  .chips {
+    display: inline-flex;
+    flex-direction: row;
     position: absolute;
-    width: Hug (71px)px;
-    height: Hug (23px)px;
+	align-items: center;
+	justify-content: start;
+    /* width: 100px; */
+    height: 23px;
     top: 176px;
     left: 8px;
-    padding: 4px 8px;
+	padding: 4px 8px 4px 8px;
     gap: 1px;
-    border-radius: 10px 0px 0px 0px;
+    border-radius: 10px;
     background: var(--css-black);    
     color: var(--css-white);
+	font-size: 10px;
 }

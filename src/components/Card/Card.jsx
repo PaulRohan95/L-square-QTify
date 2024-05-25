@@ -23,10 +23,17 @@ const Card = () => {
     const AlbumCard = ({ album }) => {
         return (
             <div className={styles.cardFrame}> 
-                <div className={styles.rect1}>
+                <div className={styles.rect}>
                     <img src={album.image} alt={album.title} className={styles.cardImage} />
                     {/* <div className={styles.pill}>{album.follows} Follows</div> */}
-                    <Chip label={`${album.follows} Follows`} className={styles.chipDesign} />
+                    <Chip
+                        sx={{
+                            width: "auto"
+                          }} 
+                        size='medium' 
+                        label={`${album.follows} Follows`} 
+                        className={styles.chips} 
+                        />
                 </div>
                 <div className={styles.cardContent}>
                     <p>{album.title}</p>
