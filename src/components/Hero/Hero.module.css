@@ -18,6 +18,7 @@
 	flex-direction: column;
 	color: var(--color-white);
 	width: 37.8125rem;
+	gap: 31px;
 	text-align: center;
     color: var(--css-white);
 }
