@@ -12,7 +12,7 @@ import styles from './Card.module.css';
                         sx={{ width: "auto" }} 
                         size='medium' 
                         label={`${album.follows} Follows`} 
-                        className={styles.chipDesign} 
+                        className={styles.chip} 
                         />
                 </div>
                 <div className={styles.cardContent}>

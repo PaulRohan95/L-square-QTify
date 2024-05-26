@@ -39,7 +39,7 @@
   }
 
 
-  .chipDesign {
+  .chip {
     display: inline-flex;
     flex-direction: row;
     position: absolute;
