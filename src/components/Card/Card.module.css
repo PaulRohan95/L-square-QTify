@@ -39,13 +39,13 @@
   }
 
 
-  .chip {
+.cardFrame .chip {
     display: inline-flex;
     flex-direction: row;
     position: absolute;
 	align-items: center;
 	justify-content: start;
-    height: 23px;
+    height: auto;
     top: 176px;
     left: 8px;
 	padding: 4px 8px 4px 8px;
@@ -53,5 +53,9 @@
     border-radius: 10px;
     background: var(--css-black);    
     color: var(--css-white);
-	font-size: 10px;
+	font-size: 11px;
+	text-align: left;
+	font-weight: 400;
+	font-family: 'Poppins', sans-serif;
+	white-space: nowrap;
 }

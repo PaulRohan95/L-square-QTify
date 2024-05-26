@@ -1,9 +1,12 @@
 .wrapper {
 	display: flex;
+	position: absolute;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	top: 4.688rem;
 	height: 16.875rem;
+	/* border: 1px solid white; */
 }
 
 .section {

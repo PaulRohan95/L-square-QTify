@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.albumsContainer {
+    display: flex;
+    position: absolute;   
+    justify-content: center;
+    width: 1,384px;
+    height: 290px;
+    top: 368px;
+    left: 31px;
+    right: 31px;
+    gap: 32px;
+    border-bottom: 1px solid var(--css-primary);
+    /* border: 1px solid white;  */
+}
+
+.gridTop {
+    display: block;
+    position: relative;
+    justify-content: left;
+    width: 100%;
+    height: 280px;
+    color: var(--css-primary);
+    /* border: 1px solid white; */
+}
+
+.container h3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--css-white);   
+    /* border: 1px solid white;   */
+}
+
+.buttonCollapse, .buttonShowAll {
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--css-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.albumGridTop {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    width: Hug (1,353px)px;
+    height: Hug (232px)px;
+    top: 15px;
+    left: 12px;
+    gap: 40px;
+    opacity: 0px;    
+}
+
