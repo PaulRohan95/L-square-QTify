@@ -8,7 +8,7 @@ const NewAlbums = () => {
     const [newAlbums, setNewAlbums] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [buttonText, setButtonText] = useState('Contract');
+    const [buttonText, setButtonText] = useState('Collapse');
 
     useEffect(() => {
         const fetchNewAlbums = async () => {
