@@ -8,10 +8,7 @@
 	position: relative;
   }
 
-  
-  .cardFrame:hover {
-	transform: scale(1.05);
-  }
+
 
   .rect {
 	width: 159px;

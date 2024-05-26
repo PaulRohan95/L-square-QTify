@@ -1,85 +1,61 @@
+
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Card from '../Card/Card';
-import Carousel from '../Carousel/Carousel';
+import axios from 'axios';
 import styles from './Section.module.css';
 
 const Section = () => {
+
     const [albums, setAlbums] = useState([]);
-    const [carouselToggle, setCarouselToggle] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [buttonText, setButtonText] = useState('Collapse');
 
     useEffect(() => {
         const fetchTopAlbums = async () => {
             try {
-                const resTop = await axios.get('https://qtify-backend-labs.crio.do/albums/top');
-                setAlbums(resTop.data);
+                const response = await axios.get('https://qtify-backend-labs.crio.do/albums/top');
+                setAlbums(response.data);
             } catch (error) {
-                console.log('Error fetching data', error);
+                setError(error);
+            } finally {
+                setLoading(false);
             }
         };
         fetchTopAlbums();
     }, []);
 
-    const toggleCollapse = () => {
-        setCarouselToggle(!carouselToggle);
+    const toggleButtonText = () => {
+        setButtonText(prevText => (prevText === 'Collapse' ? 'Show All' : 'Collapse'));
     };
 
-//     return (
-//         <div className={styles.sectionContainer}>
-//             <div className={styles.header}>
-//                 <h1>Top Albums</h1>
-//                 <h4 className={styles.toggleText} onClick={toggleCollapse}>
-//                     {carouselToggle ? "Show all" : "Collapse"}
-//                 </h4>
-//             </div>
-//             {albums.length ? (
-//                 <div className={styles.cardWrapper}>
-//                     {carouselToggle ? (
-//                             <Carousel data={albums} renderCardComponent={(item) => <Card key={item.id} album={item} />} />
-//                     ) : (     
-//                         <div className={styles.albumGrid}>
-//                             {albums.map(album => (
-//                                 <Card key={album.id} album={album} />
-//                             ))}
-//                         </div>
-//                     )}
-//                 </div>
-//             ) : (
-//                 <p>Loading...</p>
-//             )}
-//         </div>
-//     );
-// };
+    if (loading) {
+        return <div>Loading...</div>
+    } else if (error) {
+        return (<div>Error: {error.message}</div>)
+    }
 
-// export default Section;
-
-return (
-    <div className={styles.sectionContainer}>
-        <div className={styles.header}>
-            <h1>Top Albums</h1>
-            <h4 className={styles.toggleText} onClick={toggleCollapse}>
-                {carouselToggle ? "Show all" : "Collapse"}
-            </h4>
-        </div>
-        {albums.length ? (
-            <div className={styles.cardWrapper}>
-                {!carouselToggle ? (
+    return (
+        <div className={styles.gridContainer}>
+            <div className={styles.gridTop}>
+                <div className={styles.headerContainer}>
+                    <h1>Top Albums</h1>
+                    <button 
+                        className={buttonText === 'Collapse' ? styles.buttonCollapse : styles.buttonShowAll}
+                        onClick={toggleButtonText}>{buttonText}</button>
                     <div className={styles.albumGrid}>
-                        {albums.map(album => (
-                            <Card key={album.id} album={album} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className={styles.carouselWrapper}>
-                    <Carousel data={albums} renderCardComponent={(item) => <Card key={item.id} album={item} />} />
-                </div>
-            )}
+                        <div className={styles.albumGridOne}>
+                          {albums.map((album) => (
+                        <Card key={album.id} album={album} />
+                    ))}  
+                        </div>                       
+                    </div> 
+                </div>     
             </div>
-        ) : (
-            <p>Loading...</p>
-        )}
-    </div>
-);
-};
+            <div className={styles.gridNew}>
+                </div>              
+        </div>
+    )
+}
 
 export default Section;

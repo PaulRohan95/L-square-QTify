@@ -3,7 +3,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 16.875rem; 
+	height: 16.875rem;
 }
 
 .section {
@@ -18,30 +18,28 @@
 	flex-direction: column;
 	color: var(--color-white);
 	width: 37.8125rem;
-	gap: 31px;
 	text-align: center;
-    color: var(--css-white);
+	color: white;
+	top: 171px;
 }
 
 
-@media (max-width: 90rem) {
+@media (max-width: 48rem) {
 	.wrapper {
 		height: auto;
 	}
 
 	.section {
-		flex-direction: column;
+		flex-direction: column; 
 		align-items: center;
 	}
 
 	.banner {
 		width: 100%;
 		padding: 0.5rem;
-        color: var(--color-white);
 	}
 
 	.banner h1 {
-		font-size: 2rem;
-        color: var(--css-white);
+		font-size: 1rem;
 	}
 }

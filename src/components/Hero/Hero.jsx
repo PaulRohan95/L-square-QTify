@@ -12,7 +12,7 @@ function Hero () {
                     <h1>Over thousands podcast episodes</h1>
                 </div>
                 <div>
-                    <img src={headphone_icon} alt="headphones" height="212px" width="212px" top="103px" left="914px" />
+                    <img src={headphone_icon} alt="headphones" height="212px" width="212px" column-gap="31px" />
                 </div>  
                 </div>
         </div>

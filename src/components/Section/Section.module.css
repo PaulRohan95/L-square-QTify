@@ -1,77 +1,33 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-.sectionContainer {
-	display: flexbox;
-	width: Hug (1384px)px;
-    padding: 20px;
-    margin: 0 auto;
-	height: Hug (592px)px;
-	top: 32px;
-	left: 31px;
-	position: relative;	
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-  
-  .header h1 {
-	position: relative;
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-	width: 122px;
-	height: 30px;
-	font-family: 'Poppins';
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 30px;
-	color: var(--css-white);
-  }
-
-.albumGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-Button {
-    width: 85px;
-    height: 30px;
-    left: 1291px;
-    font-family: 'Poppins';
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 30px;
-    text-align: right;
-    color: #34C94B;   
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-.sectionContainer {
-	display: flexbox;
+.gridContainer {
+	display: flex;
+    gap: 32px;
 	width: Hug (1384px)px;
+    height: Hug (848px)px;
     padding: 20px;
     margin: 0 auto;
 	height: Hug (592px)px;
-	top: 32px;
-	left: 31px;
-	position: relative;	
+	top: 368px;
+	left: 32px;
+	position: fixed;	
 }
 
-.header {
+.gridTop {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+	position: relative;
+	width: 1376px;
+    height: 536px;
+	
 }
 
-.header h1 {
+.headerContainer {
+    display: flexbox;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerContainer h1 {   
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 20px;
@@ -79,25 +35,53 @@ Button {
     color: var(--css-white);
 }
 
-.header .toggleText {
+
+.headerContainer .buttonCollapse {
+    margin-left: 90%;
+    width: 90px;
+    height: 30px;
+    left: 1286px;
     font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 14px;
-    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: right;
     color: var(--css-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.cardWrapper {
-    /* display: flex;
-    flex-wrap: wrap;
-    gap: 20px; */
-    width: 100%;    
+.headerContainer .buttonShowAll {
+    margin-left: 90%;
+    width: auto;
+    height: 30px;
+    left: 1291px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: right;
+    color: var(--css-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .albumGrid {
     display: flex;
-    /* flex-wrap: wrap; */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 40px;
+    top: 24px;
     justify-content: center;
+    position: relative;	
+}
+
+.albumGridOne {
+    display: flex;
+    position: relative;
+    width: Hug (1,353px)px;
+    height: Hug (232px)px;
+    gap: 40px;
+
 }
