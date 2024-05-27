@@ -5,13 +5,13 @@ import styles from './Carousel.module.css';
 import Card from '../Card/Card';
 import LeftButton from './NavigationButton/LeftButton';
 import RightButton from './NavigationButton/RightButton';
-import LeftArrow from '../../assets/LeftArrow.svg'
-import RightArrow from '../../assets/RightArrow.svg';
+// import LeftArrow from '../../assets/LeftArrow.svg'
+// import RightArrow from '../../assets/RightArrow.svg';
 import { Navigation } from 'swiper/modules';
 
 const Carousel = ({ items = [] }) => {
   return (
-        <div className={styles.carousel}>
+        // <div className={styles.carousel}>
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
@@ -31,24 +31,20 @@ const Carousel = ({ items = [] }) => {
               nextEl: '.swiper-button-next',
           }}
           modules={[Navigation]}
-          className={styles.swiperContainer}>
+          className={styles.carousel}>
+      <div className="swiper-button-prev">
+        <LeftButton />
+      </div>
+      <div className="swiper-button-next">
+        <RightButton />
+      </div>
           {items.map((item) => (
               <SwiperSlide key={item.id}>
                   <Card album={item} />
               </SwiperSlide>
           ))}
       </Swiper>
-      <div className="swiper-button-prev">
-        <LeftButton>
-          <img src={LeftArrow} alt="Left arrow" />
-        </LeftButton>
-      </div>
-      <div className="swiper-button-next">
-        <RightButton>
-          <img src={RightArrow} alt="Right arrow" />
-        </RightButton>
-      </div>
-        </div>
+        // </div>
   );
 };
 

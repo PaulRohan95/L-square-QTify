@@ -9,7 +9,7 @@ const TopAlbums = () => {
     const [topAlbums, setTopAlbums] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    // const [buttonText, setButtonText] = useState('Collapse');
+    const [buttonText, setButtonText] = useState('Collapse');
     const [showCarousel, setShowCarousel] = useState(false);
 
     useEffect(() => {
@@ -27,10 +27,10 @@ const TopAlbums = () => {
     }, []);
 
 
-    const toggleView = () => {
-        setShowCarousel(prevState => !prevState);
-    }
-    
+    const toggleButtonText = () => {
+        setShowCarousel(!showCarousel);
+        setButtonText(prevText => (prevText === 'Collapse' ? 'Show All' : 'Collapse'));
+    };
 
     if (loading) {
         return <div>Loading...</div>
@@ -44,14 +44,14 @@ const TopAlbums = () => {
                     <div className={styles.container}>
                         <h3>Top Albums
                         <button 
-                            // className={buttonText === 'Collapse' ? styles.buttonCollapse : styles.buttonShowAll}
-                            // onClick={toggleButtonText}>{buttonText}
-                            className={showCarousel ? styles.buttonShowAll : styles.buttonCollapse}
-                            onClick={toggleView}>{showCarousel ? 'Show All' : 'Collapse'}
+                            className={buttonText === 'Collapse' ? styles.buttonCollapse : styles.buttonShowAll}
+                            onClick={toggleButtonText}>{buttonText}
+                            {/* className={showCarousel ? styles.buttonShowAll : styles.buttonCollapse}
+                            onClick={toggleView}>{showCarousel ? 'Show All' : 'Collapse'} */}
                         </button>
                         </h3>
                         {showCarousel ? (
-                            <Carousel items={topAlbums}/>
+                            <Carousel items={topAlbums} />
                         ) : (
                         <div className={styles.albumGrid}>
                             <div className={styles.albumGridTop}>

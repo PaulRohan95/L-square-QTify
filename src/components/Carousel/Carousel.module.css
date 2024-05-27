@@ -2,13 +2,13 @@
     position: relative;
 }
 
-.swiper-container {
+/* .swiper-container {
     width: 100%;
   }
-  
+   */
   .swiper-button-prev,
   .swiper-button-next {
-    position: relative;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
@@ -16,10 +16,10 @@
   }
   
   .swiper-button-prev {
-    left: 0;
+    left: -40px;
   }
   
   .swiper-button-next {
-    right: 0;
+    right: -40px;
   }
   

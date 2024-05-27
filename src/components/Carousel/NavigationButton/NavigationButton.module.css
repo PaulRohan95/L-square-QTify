@@ -13,9 +13,9 @@
 }
 
 .navButton.prev {
-    left: 0px; 
+    left: -40px; 
 }
 
 .navButton.next {
-    right: -20px;
+    right: -40px;
 }

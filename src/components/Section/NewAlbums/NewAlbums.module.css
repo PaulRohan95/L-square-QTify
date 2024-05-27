@@ -4,7 +4,7 @@
     justify-content: center;
     width: 1,384px;
     height: 290px;
-    top: 680px;
+    top: 985px;
     left: 31px;
     right: 31px;
     gap: 32px;
@@ -48,7 +48,8 @@
 }
 
 .albumGridNew {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
     position: relative;
     justify-content: flex-start;
     width: Hug (1,353px)px;

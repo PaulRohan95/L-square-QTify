@@ -9,7 +9,7 @@ const NewAlbums = () => {
     const [newAlbums, setNewAlbums] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    // const [buttonText, setButtonText] = useState('Collapse');
+    const [buttonText, setButtonText] = useState('Collapse');
     const [showCarousel, setShowCarousel] = useState(false);
 
     useEffect(() => {
@@ -26,13 +26,11 @@ const NewAlbums = () => {
         fetchNewAlbums();
     }, []);
 
-    // const toggleButtonText = () => {
-    //     setButtonText(prevText => (prevText === 'Collapse' ? 'Show All' : 'Collapse'));
-    // };
+    const toggleButtonText = () => {
+        setShowCarousel(!showCarousel);
+        setButtonText(prevText => (prevText === 'Collapse' ? 'Show All' : 'Collapse'));
+    };
     
-    const toggleView = () => {
-        setShowCarousel(prevState => !prevState);
-    }
 
     if (loading) {
         return <div>Loading...</div>
@@ -46,10 +44,10 @@ const NewAlbums = () => {
                     <div className={styles.container}>
                         <h3>New Albums
                             <button
-                                // className={buttonText === 'Collapse' ? styles.buttonContract : styles.buttonExpand}
-                                // onClick={toggleButtonText}>{buttonText}
-                                className={showCarousel ? styles.buttonExpand : styles.buttonContract}
-                                onClick={toggleView}>{showCarousel ? 'Show All' : 'Collapse'}
+                                className={buttonText === 'Collapse' ? styles.buttonContract : styles.buttonExpand}
+                                onClick={toggleButtonText}>{buttonText}
+                                {/* className={showCarousel ? styles.buttonExpand : styles.buttonContract}
+                                onClick={toggleView}>{showCarousel ? 'Show All' : 'Collapse'} */}
                                 </button>
                         </h3>
                         {showCarousel ? (
