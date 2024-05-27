@@ -8,7 +8,7 @@ import RightButton from './NavigationButton/RightButton';
 import { Navigation } from 'swiper/modules';
 
 const Carousel = ({ items = [], type }) => {
-    console.log("Carousel items:", items);
+    // console.log("Carousel items:", items);
   return (
         <Swiper
           spaceBetween={20}

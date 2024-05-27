@@ -29,11 +29,17 @@
 
 import React from 'react';
 import Chip from '@mui/material/Chip';
+import Tooltip from '@mui/material/Tooltip';
 import styles from './Card.module.css';
 
-const Card = ({ album, type }) => {
+const Card = ({ album, type, tooltipText }) => {
     const label = type === 'songs' ? `${album.likes} Likes` : `${album.follows} Follows`;
     return (
+        <Tooltip
+        title={tooltipText ? `${tooltipText} songs` : ``}
+        placement="top"
+        arrow>
+
         <div className={styles.cardFrame}> 
             <div className={styles.rect}>
                 <img src={album.image} alt={album.title} className={styles.cardImage} />
@@ -48,6 +54,7 @@ const Card = ({ album, type }) => {
                 <p>{album.title}</p>
             </div>
         </div>
+        </Tooltip>
     );
 }
 
