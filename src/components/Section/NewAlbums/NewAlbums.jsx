@@ -51,7 +51,7 @@ const NewAlbums = () => {
                                 </button>
                         </h3>
                         {showCarousel ? (
-                            <Carousel items={newAlbums}/>
+                            <Carousel items={newAlbums} />
                         ) : (
                         <div className={styles.albumGrid}>
                             <div className={styles.albumGridNew}>

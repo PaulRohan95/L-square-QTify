@@ -5,26 +5,18 @@ import styles from './Carousel.module.css';
 import Card from '../Card/Card';
 import LeftButton from './NavigationButton/LeftButton';
 import RightButton from './NavigationButton/RightButton';
-// import LeftArrow from '../../assets/LeftArrow.svg'
-// import RightArrow from '../../assets/RightArrow.svg';
 import { Navigation } from 'swiper/modules';
 
-const Carousel = ({ items = [] }) => {
+const Carousel = ({ items = [], type }) => {
+    console.log("Carousel items:", items);
   return (
-        // <div className={styles.carousel}>
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
           breakpoints={{
-              640: {
-                  slidesPerView: 5,
-              },
-              768: {
-                  slidesPerView: 7,
-              },
-              1024: {
-                  slidesPerView: 9,
-              },
+              640: { slidesPerView: 5 },
+              768: { slidesPerView: 7 },
+              1024: { slidesPerView: 9 },
           }}
           navigation={{
               prevEl: '.swiper-button-prev',
@@ -40,11 +32,10 @@ const Carousel = ({ items = [] }) => {
       </div>
           {items.map((item) => (
               <SwiperSlide key={item.id}>
-                  <Card album={item} />
+                  <Card album={item} type={type} />
               </SwiperSlide>
           ))}
       </Swiper>
-        // </div>
   );
 };
 
