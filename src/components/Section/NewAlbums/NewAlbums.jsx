@@ -9,8 +9,8 @@ const NewAlbums = () => {
     const [newAlbums, setNewAlbums] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [buttonText, setButtonText] = useState('Collapse');
-    const [showCarousel, setShowCarousel] = useState(false);
+    const [buttonText, setButtonText] = useState('Show All');
+    const [showCarousel, setShowCarousel] = useState(true);
 
     useEffect(() => {
         const fetchNewAlbums = async () => {
