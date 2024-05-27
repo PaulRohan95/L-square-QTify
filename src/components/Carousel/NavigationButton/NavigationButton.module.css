@@ -1,0 +1,21 @@
+.navButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; 
+}
+
+.navButton.prev {
+    left: 0px; 
+}
+
+.navButton.next {
+    right: -20px;
+}

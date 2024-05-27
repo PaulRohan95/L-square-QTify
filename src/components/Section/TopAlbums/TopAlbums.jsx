@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Card from '../../Card/Card';
 import axios from 'axios';
 import styles from './TopAlbums.module.css';
+import Carousel from '../../Carousel/Carousel';
 
 const TopAlbums = () => {
 
     const [topAlbums, setTopAlbums] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [buttonText, setButtonText] = useState('Collapse');
+    // const [buttonText, setButtonText] = useState('Collapse');
+    const [showCarousel, setShowCarousel] = useState(false);
 
     useEffect(() => {
         const fetchTopAlbums = async () => {
@@ -24,9 +26,11 @@ const TopAlbums = () => {
         fetchTopAlbums();
     }, []);
 
-    const toggleButtonText = () => {
-        setButtonText(prevText => (prevText === 'Collapse' ? 'Show All' : 'Collapse'));
-    };
+
+    const toggleView = () => {
+        setShowCarousel(prevState => !prevState);
+    }
+    
 
     if (loading) {
         return <div>Loading...</div>
@@ -40,9 +44,15 @@ const TopAlbums = () => {
                     <div className={styles.container}>
                         <h3>Top Albums
                         <button 
-                            className={buttonText === 'Collapse' ? styles.buttonCollapse : styles.buttonShowAll}
-                            onClick={toggleButtonText}>{buttonText}</button>
+                            // className={buttonText === 'Collapse' ? styles.buttonCollapse : styles.buttonShowAll}
+                            // onClick={toggleButtonText}>{buttonText}
+                            className={showCarousel ? styles.buttonShowAll : styles.buttonCollapse}
+                            onClick={toggleView}>{showCarousel ? 'Show All' : 'Collapse'}
+                        </button>
                         </h3>
+                        {showCarousel ? (
+                            <Carousel items={topAlbums}/>
+                        ) : (
                         <div className={styles.albumGrid}>
                             <div className={styles.albumGridTop}>
                             {topAlbums.map((album) => (
@@ -50,6 +60,7 @@ const TopAlbums = () => {
                         ))}  
                             </div>                       
                         </div> 
+                        )}
                     </div>     
                 </div>             
             </div>       
