@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper-bundle.css';
 import styles from './Carousel.module.css';
 import Card from '../Card/Card';
 import LeftButton from './NavigationButton/LeftButton';
